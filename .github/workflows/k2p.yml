@@ -1,4 +1,4 @@
-name: Build MSG1500 Padavan4.4
+name: k2p
 
 on:
   workflow_dispatch:
@@ -43,7 +43,7 @@ jobs:
         mkdir -p /opt/images/
     - name: Build Firmware
       env:
-        TNAME: MSG1500
+        TNAME: k2p
       run: |
         cd /opt/rt-n56u/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
@@ -108,5 +108,5 @@ jobs:
       uses: actions/upload-artifact@master
       if: always()
       with:
-        name: Padavan-MSG1500
+        name: k2p
         path: /opt/images
