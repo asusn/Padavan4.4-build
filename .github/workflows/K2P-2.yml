@@ -1,5 +1,5 @@
 #修改TNAME: B70中的B70为你需要编译的型号，注意名称要与configs/templates/目录下的名字相同
-name: K2P 测试版
+name: MI-R3P
 
 on:
   workflow_dispatch:
@@ -44,7 +44,7 @@ jobs:
         mkdir -p /opt/images/
     - name: Build Firmware
       env:
-        TNAME: K2P
+        TNAME: MI-R3P
       run: |
         cd /opt/rt-n56u/trunk
         if [ ! -f configs/templates/$TNAME.config ] ; then
@@ -83,5 +83,5 @@ jobs:
       uses: actions/upload-artifact@master
       if: always()
       with:
-        name: Padavan-K2P
+        name: MI-R3P
         path: /opt/images
